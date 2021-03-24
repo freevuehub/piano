@@ -97,12 +97,18 @@ const Home = () => {
 
   return (
     <div className={style.container}>
-      {codeList.map((sound) => (
-        <div className={`${style.code} ${rightSoundList.some((item) => item === sound) ? style.on : ''}`} key={sound}>
-          {sound} {`${rightSoundList.some((item) => item === sound)}`}
-          <Sound src={`${sound}.mp3`} play={rightSoundList.some((item) => item === sound)} />
+      {rightSoundList.map((sound) => (
+        <div className={`${style.code}`} key={sound}>
+          {sound}
+          <Sound src={`${sound}.mp3`} />
         </div>
       ))}
+      {/*{codeList.map((sound) => (*/}
+      {/*  <div className={`${style.code} ${rightSoundList.some((item) => item === sound) ? style.on : ''}`} key={sound}>*/}
+      {/*    {sound} {`${rightSoundList.some((item) => item === sound)}`}*/}
+      {/*    <Sound src={`${sound}.mp3`} play={rightSoundList.some((item) => item === sound)} />*/}
+      {/*  </div>*/}
+      {/*))}*/}
       {/*{codeList.map((sound) => (*/}
       {/*  <div key={sound}>*/}
       {/*    {sound} {`${leftSoundList.indexOf(sound) > 0}`}*/}
