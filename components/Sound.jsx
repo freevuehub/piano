@@ -1,4 +1,4 @@
-const Audio = (props) => {
+const Sound = (props) => {
   const onAudioPlay = (event) => {
     event.target.pause()
 
@@ -12,4 +12,4 @@ const Audio = (props) => {
   )
 }
 
-export default Audio
+export default Sound
