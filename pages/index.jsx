@@ -5,11 +5,11 @@ import style from '../styles/Home.module.css'
 const minute = 60000
 const tabSize = 80
 const second = minute * tabSize / 60 / 60
-const codeList = [
-  '0', '0s', '1', '1s', '2', '3', '3s', '4', '4s', '5', '5s', '6',
-  '7', '7s', '8', '8s', '9', '10', '10s', '11', '11s', '12', '12s', '13',
-  '14', '14s', '15', '15s', '16', '17', '17s', '18', '18s', '19', '19s', '20',
-]
+// const codeList = [
+//   '0', '0s', '1', '1s', '2', '3', '3s', '4', '4s', '5', '5s', '6',
+//   '7', '7s', '8', '8s', '9', '10', '10s', '11', '11s', '12', '12s', '13',
+//   '14', '14s', '15', '15s', '16', '17', '17s', '18', '18s', '19', '19s', '20',
+// ]
 const rightSheet = [
   {
     sounds: [],
@@ -92,29 +92,27 @@ const Home = () => {
 
   useEffect(() => {
     onChangeSound(0, rightSheet, setRightSoundList)
-    // onChangeSound(0, leftSheet, setLeftSoundList)
+    onChangeSound(0, leftSheet, setLeftSoundList)
   }, [])
 
   return (
     <div className={style.container}>
-      {rightSoundList.map((sound) => (
-        <div className={`${style.code}`} key={sound}>
-          {sound}
-          <Sound src={`${sound}.mp3`} />
-        </div>
-      ))}
-      {/*{codeList.map((sound) => (*/}
-      {/*  <div className={`${style.code} ${rightSoundList.some((item) => item === sound) ? style.on : ''}`} key={sound}>*/}
-      {/*    {sound} {`${rightSoundList.some((item) => item === sound)}`}*/}
-      {/*    <Sound src={`${sound}.mp3`} play={rightSoundList.some((item) => item === sound)} />*/}
-      {/*  </div>*/}
-      {/*))}*/}
-      {/*{codeList.map((sound) => (*/}
-      {/*  <div key={sound}>*/}
-      {/*    {sound} {`${leftSoundList.indexOf(sound) > 0}`}*/}
-      {/*    <Sound src={`${sound}.mp3`} play={leftSoundList.some((item) => item === sound)} />*/}
-      {/*  </div>*/}
-      {/*))}*/}
+      <div>
+        {rightSoundList.map((sound) => (
+          <div className={`${style.code}`} key={sound}>
+            {sound}
+            <Sound src={`${sound}.mp3`} />
+          </div>
+        ))}
+      </div>
+      <div>
+        {leftSoundList.map((sound) => (
+          <div className={`${style.code}`} key={sound}>
+            {sound}
+            <Sound src={`${sound}.mp3`} />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
