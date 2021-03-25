@@ -12,10 +12,6 @@ const second = minute * tabSize / 60 / 60
 // ]
 const rightSheet = [
   {
-    sounds: [],
-    timer: 3000,
-  },
-  {
     sounds: ['10', '8'],
     timer: second,
   },
@@ -77,7 +73,6 @@ const leftSheet = [
 const Home = () => {
   const [rightSoundList, setRightSoundList] = useState([])
   const [leftSoundList, setLeftSoundList] = useState([])
-  console.log(second * 2, second * (6 / 4) * 4)
   const onChangeSound = (index, list, fn) => {
     if (index < list.length) {
       const { sounds, timer } = list[index]
