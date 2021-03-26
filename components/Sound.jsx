@@ -5,6 +5,14 @@ const Sound = (props) => {
   const onAudioPlay = (event) => {
     event.target.pause()
     event.target.play()
+
+    setTimeout(() => {
+      event.target.pause()
+
+      setTimeout(() => {
+        props.onRemove()
+      })
+    }, props.timer)
   }
 
   return (
