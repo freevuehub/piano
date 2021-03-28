@@ -15,9 +15,7 @@ const Sound = (props) => {
     }, props.timer)
   }
 
-  return (
-    <audio ref={track} onCanPlay={onAudioPlay} src={`./sound/${props.src}`} />
-  )
+  return props.src !== '' ? <audio ref={track} onCanPlay={onAudioPlay} src={`./sound/${props.src}.mp3`} /> : <></>
 }
 
 export default Sound
