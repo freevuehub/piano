@@ -13,6 +13,7 @@ const pianoList = [
   'C8', 'C♯8', 'D8', 'D♯8', 'E8', 'F8', 'F♯8', 'G8', 'G♯8', 'A8', 'A♯8', 'B8',
   'C9',
 ]
+const width = (100 / (pianoList.length - pianoList.filter((item) => /♯/g.test(item)).length))
 const Home = () => {
   const [pick, setPick] = useState('')
   const [timer, setTimer] = useState(0)
@@ -34,9 +35,13 @@ const Home = () => {
   return (
     <div className={style.container}>
       <div className={style.pianoWrap}>
-        {pianoList.map((item) => (
+        {pianoList.map((item, index) => (
           <button
-            className={`piano-${item} ${/♯/g.test(item) ? 'sharp' : ''}`}
+            style={{
+              width: `${width}%`,
+              left: /♯/g.test(item) ? `${width * (index - 1)}%` : 'unset',
+            }}
+            className={`piano-${item} ${/♯/g.test(item) ? style.sharp : ''} ${style.button}`}
             onClick={onButtonClick}
             value={item}
             key={item}

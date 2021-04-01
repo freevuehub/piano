@@ -1,24 +1,38 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   height: 100vh;
 }
 .pianoWrap {
   min-height: 100vh;
   align-items: center;
   display: flex;
-  overflow-x: auto;
+  overflow: hidden;
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
-.pianoWrap button {
-  width: 30px;
+.button {
   height: 120px;
+  border: 1px solid #000;
+  border-left: 0;
+  font-size: 0;
+  background-color: #fff;
 }
-.pianoWrap button.sharp {
+.button:first-child {
+  border-left: 1px solid #000;
+}
+.button:focus {
+  outline: 0;
+  background-color: #f2f2f2;
+}
+.sharp {
   position: absolute;
+  transform: translateY(-60px);
+  top: 50%;
+  height: 80px;
+  background-color: #000;
+  border-radius: 0 0 4px 4px;
+  z-index: 1;
 }
 .code {
   text-align: center;
