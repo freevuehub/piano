@@ -1,16 +1,19 @@
 import { useRef } from 'react'
 
+let timeOut
 const Sound = (props) => {
   const track = useRef()
   const onAudioPlay = (event) => {
+    clearTimeout(timeOut)
+
     event.target.pause()
     event.target.play()
 
-    setTimeout(() => {
+    timeOut = setTimeout(() => {
       event.target.pause()
 
       setTimeout(() => {
-        props.onRemove()
+        props.onDone && props.onDone()
       })
     }, props.timer)
   }
