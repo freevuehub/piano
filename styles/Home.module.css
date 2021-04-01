@@ -1,15 +1,24 @@
 .container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100vh;
 }
-.container div {
-  min-height: 50%;
-  display: flex;
-  justify-content: center;
+.pianoWrap {
+  min-height: 100vh;
   align-items: center;
+  display: flex;
+  overflow-x: auto;
+}
+.pianoWrap button {
+  width: 30px;
+  height: 120px;
+}
+.pianoWrap button.sharp {
+  position: absolute;
 }
 .code {
   text-align: center;
