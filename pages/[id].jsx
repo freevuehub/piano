@@ -33,15 +33,12 @@ const rightSheet = [
   ],
   [
     { code: 'F6', beat: 1 },
-    { code: 'D6', beat: 1 },
   ],
   [
     { code: 'A6', beat: 1 },
-    { code: 'F6', beat: 1 },
   ],
   [
     { code: 'E6', beat: 2 },
-    { code: 'C6', beat: 2 },
   ],
   [
     { code: '', beat: 1 },
@@ -86,13 +83,13 @@ const leftSheet = [
     { code: '', beat: 1 },
   ],
   [
-    { code: '', beat: 1 },
+    { code: 'D6', beat: 1 },
   ],
   [
     { code: '', beat: 1 },
   ],
   [
-    { code: '', beat: 1 },
+    { code: 'C6', beat: 2 },
   ],
   [
     { code: '', beat: 1 },
@@ -111,7 +108,7 @@ const leftSheet = [
   ],
   [
     { code: 'G6', beat: 4 },
-    { code: 'E6', beat: 1 },
+    { code: 'E6', beat: 4 },
   ],
   [
     { code: '', beat: 1 },
