@@ -39,7 +39,7 @@ const Home = () => {
           <button
             style={{
               width: `${width}%`,
-              left: /♯/g.test(item) ? `${width * (index - 1)}%` : 'unset',
+              left: /♯/g.test(item) ? `${width * (index + 1)}%` : 'unset',
             }}
             className={`piano-${item} ${/♯/g.test(item) ? style.sharp : ''} ${style.button}`}
             onClick={onButtonClick}
