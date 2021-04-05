@@ -26,10 +26,6 @@ const Home = () => {
 
     setPick(event.target.value)
     setTimer(4000)
-
-    setTimeout(() => {
-
-    }, 4000)
   }
 
   return (
