@@ -4,20 +4,6 @@ import style from '../styles/Home.module.css'
 
 const minute = 60000
 const minuteBeat = 80
-const a = [
-  [
-    { code: 'F5', beat: 1 },
-    { code: 'A5', beat: 1 },
-    { code: 'E5', beat: 2 },
-  ]
-]
-const b = [
-  [
-    { code: 'F5', beat: 1 },
-    { code: 'A5', beat: 1 },
-    { code: 'E5', beat: 2 },
-  ]
-]
 const rightSheet = [
   [
     { code: '', beat: 1 },
