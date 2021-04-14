@@ -123,11 +123,6 @@ const Home = () => {
     onChangeSound(0, rightSheet, setRightSoundList)
     onChangeSound(0, leftSheet, setLeftSoundList)
   }, [])
-  const onCodeRemove = (index) => () => {
-    // const setList = rightSoundList.splice(index, 0)
-
-    // setRightSoundList(setList)
-  }
 
   return (
     <div className={style.container}>
@@ -135,7 +130,7 @@ const Home = () => {
         {rightSoundList.map(({ code, beat }, index) => (
           <div className={`${style.code}`} key={index}>
             {code}
-            <Sound timer={beat * (minute / minuteBeat)} src={code} onRemove={onCodeRemove(index)} />
+            <Sound timer={beat * (minute / minuteBeat)} src={code} />
           </div>
         ))}
       </div>
@@ -143,7 +138,7 @@ const Home = () => {
         {leftSoundList.map(({ code, beat }, index) => (
           <div className={`${style.code}`} key={index}>
             {code}
-            <Sound timer={beat * (minute / minuteBeat)} src={code} onRemove={onCodeRemove(index)} />
+            <Sound timer={beat * (minute / minuteBeat)} src={code} />
           </div>
         ))}
       </div>
