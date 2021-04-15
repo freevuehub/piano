@@ -31,19 +31,27 @@ const Home = () => {
   return (
     <div className={style.container}>
       <div className={style.pianoWrap}>
-        {pianoList.map((item, index) => (
-          <button
-            style={{
-              width: `${width}%`,
-            }}
-            className={`piano-${item} ${/♯/g.test(item) ? style.sharp : ''} ${style.button}`}
-            onClick={onButtonClick}
-            value={item}
-            key={item}
-          >
-            {item}
-          </button>
-        ))}
+        {pianoList.map((item, index) => {
+          const isSharp = /♯/g.test(item)
+          if (isSharp) {
+            console.log(index, index % 2, item)
+          }
+
+          return (
+            <button
+              style={{
+                width: `${width}%`,
+                left: isSharp ? `${(index + Math.abs(index % 2 - 1)) * width / 2}%` : 'unset',
+              }}
+              className={`piano-${item} ${isSharp ? style.sharp : ''} ${style.button}`}
+              onClick={onButtonClick}
+              value={item}
+              key={item}
+            >
+              {item}
+            </button>
+          )
+        })}
       </div>
       <Sound src={pick} timer={timer} onDone={onDone} />
     </div>
